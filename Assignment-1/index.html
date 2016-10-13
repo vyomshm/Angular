@@ -17,12 +17,12 @@
         ng-controller="LunchCheckController">
      <h1>Lunch Checker</h1>
 
-         <div class="form-group">
+         <div class="form-group" style="color: green">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control"
              ng-model="LunchItems">
-             
+            *any empty item will not be considered.For example (item 1, item2,,item3) or (item 1,,item2,,item3) both have only 3 lunch items.
          </div>
          <div class="form-group">
              <button class="btn btn-default"
