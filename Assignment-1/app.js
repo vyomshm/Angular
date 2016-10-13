@@ -13,17 +13,22 @@ function CheckLunch($scope){
     $scope.CheckLunchState=function (){
 
     console.log("fn invoked");
-	function splitString(stringToSplit, separator) {
-     var arrayOfStrings = stringToSplit.split(separator);
-     $scope.arrayOfStrings=arrayOfStrings;
-
-  console.log('The array has ' + arrayOfStrings.length + ' elements: ' + arrayOfStrings.join(' / '));
+ 
+  function splitString(stringToSplit, separator) {
   
-};
-    
-    var comma =',';    
-    splitString($scope.LunchItems,comma);
+     var arrayOfStrings = stringToSplit.split(separator);
+     $scope.arrayOfStrings=arrayOfStrings; 
 
+     };
+    
+      var comma =',';    
+      splitString($scope.LunchItems,comma);
+
+       for(var i=1;i<$scope.arrayOfStrings.length;i++){  //checks
+       	  if($scope.arrayOfStrings[i]==""){
+       	  	$scope.arrayOfStrings.length-=1;
+       }
+   }
 
     	if($scope.arrayOfStrings[0]== ""){
     		$scope.stateOfLunch="Please Enter Data First!";
@@ -35,7 +40,7 @@ function CheckLunch($scope){
     		$scope.stateOfLunch="Too much!";
     	}
 
-    };
+   };
 
 	
 };
